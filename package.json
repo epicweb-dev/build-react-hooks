@@ -1,0 +1,97 @@
+{
+  "name": "build-react-hooks",
+  "private": true,
+  "epicshop": {
+    "title": "Build React Hooks 🪝",
+    "subtitle": "Understand how React hooks work by building them from scratch",
+    "githubRoot": "https://github.com/epicweb-dev/build-react-hooks/blob/main",
+    "instructor": {
+      "name": "Some instructor",
+      "avatar": "/images/instructor.png",
+      "𝕏": "your_x_handle_here"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "postinstall": "cd ./epicshop && npm install",
+    "start": "npx --prefix ./epicshop epicshop start",
+    "dev": "npx --prefix ./epicshop epicshop start",
+    "test": "npm run test --silent --prefix playground",
+    "test:e2e": "npm run test:e2e --silent --prefix playground",
+    "test:e2e:dev": "npm run test:e2e:dev --silent --prefix playground",
+    "test:e2e:run": "npm run test:e2e:run --silent --prefix playground",
+    "setup": "node ./epicshop/setup.js",
+    "setup:custom": "node ./epicshop/setup-custom.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc -b",
+    "validate:all": "npm-run-all --parallel --print-label --print-name --continue-on-error test:all lint typecheck"
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com/)",
+  "license": "GPL-3.0-only",
+  "workspaces": [
+    "exercises/*/*",
+    "examples/*"
+  ],
+  "engines": {
+    "node": "^18.19.0 || >=20.5.0",
+    "npm": ">=8.16.0",
+    "git": ">=2.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^9.5.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "always",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": false,
+    "singleAttributePerLine": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": true,
+    "overrides": [
+      {
+        "files": [
+          "**/*.json"
+        ],
+        "options": {
+          "useTabs": false
+        }
+      },
+      {
+        "files": [
+          "**/*.mdx"
+        ],
+        "options": {
+          "proseWrap": "preserve",
+          "htmlWhitespaceSensitivity": "ignore"
+        }
+      }
+    ]
+  },
+  "prettierIgnore": [
+    "node_modules",
+    "**/build/**",
+    "**/public/build/**",
+    ".env",
+    "**/package-lock.json",
+    "**/playwright-report/**"
+  ]
+}
