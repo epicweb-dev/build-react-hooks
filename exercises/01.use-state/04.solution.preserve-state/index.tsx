@@ -1,14 +1,22 @@
 import { createRoot } from 'react-dom/client'
 
+let state: any, setState: any
+
 function useState<State>(initialState: State) {
-	let state = initialState
-	const setState = (newState: State) => (state = newState)
-	return [state, setState] as const
+	if (state === undefined) {
+		state = initialState
+		setState = (newState: State) => {
+			state = newState
+			render()
+		}
+	}
+	return [state, setState] as [State, (newState: State) => void]
 }
 
 function Counter() {
 	const [count, setCount] = useState(0)
 	const increment = () => setCount(count + 1)
+
 	return (
 		<div className="counter">
 			<button onClick={increment}>{count}</button>
@@ -19,4 +27,9 @@ function Counter() {
 const rootEl = document.createElement('div')
 document.body.append(rootEl)
 const appRoot = createRoot(rootEl)
-appRoot.render(<Counter />)
+
+function render() {
+	appRoot.render(<Counter />)
+}
+
+render()

@@ -2,7 +2,10 @@ import { createRoot } from 'react-dom/client'
 
 function useState<State>(initialState: State) {
 	let state = initialState
-	const setState = (newState: State) => (state = newState)
+	const setState = (newState: State) => {
+		state = newState
+		render()
+	}
 	return [state, setState] as const
 }
 
@@ -19,4 +22,9 @@ function Counter() {
 const rootEl = document.createElement('div')
 document.body.append(rootEl)
 const appRoot = createRoot(rootEl)
-appRoot.render(<Counter />)
+
+function render() {
+	appRoot.render(<Counter />)
+}
+
+render()

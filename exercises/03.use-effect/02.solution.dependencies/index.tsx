@@ -4,13 +4,13 @@ import { createRoot } from 'react-dom/client'
 const INITIALIZATION = Symbol('phase.initialization')
 const UPDATE = Symbol('phase.update')
 type Phase = typeof INITIALIZATION | typeof UPDATE
-let phase: Phase = INITIALIZATION
+let phase: Phase
 let hookIndex = 0
 const states: Array<[any, (newState: any) => void]> = []
 type EffectCallback = () => void
 const effects: Array<{
 	callback: EffectCallback
-	deps: Array<any>
+	deps?: Array<any>
 	prevDeps?: Array<any>
 }> = []
 
@@ -28,7 +28,7 @@ function useState<State>(initialState: State) {
 	return states[id] as [State, (newState: State) => void]
 }
 
-function useEffect(callback: EffectCallback, deps: Array<any>) {
+function useEffect(callback: EffectCallback, deps?: Array<any>) {
 	const id = hookIndex++
 	effects[id] = { callback, deps, prevDeps: effects[id]?.deps }
 }
@@ -49,7 +49,7 @@ function Counter() {
 	}, [enabled])
 
 	return (
-		<div>
+		<div className="counter">
 			<button onClick={toggle}>{enabled ? 'Disable' : 'Enable'}</button>
 			<button disabled={!enabled} onClick={increment}>
 				{count}
