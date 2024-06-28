@@ -1,1 +1,39 @@
 # useState
+
+The `useState` hook is one of the most common hooks and is a good place for us
+to start because it triggers re-rendering of the component and we can observe
+its effects in the UI.
+
+The goal of this exercise is not to build something super rigourous, but instead
+to hack away until it works.
+
+Here's the basic API that we need to implement in this exercise:
+
+```tsx
+const [state, setState] = useState(initialState)
+
+function handleEvent() {
+	setState(newState)
+}
+```
+
+The `useState` hook accepts an initial value, and returns an array with two
+values:
+
+- `state`: the current value of the state
+- `setState`: a function that updates the state
+
+We will use the `setState` function to update the state of the component. But
+just updating the state is not enough. We need to trigger a re-render of the
+component as well.
+
+Because we're not React, we need to hack away at things a little bit. For
+example, the built-in `useState` hook is _the_ way to trigger re-renders, but
+since we'll be implementing `useState` ourselves, we'll have to be creative on
+how we trigger re-renders.
+
+Another tricky thing will be ensuring we can keep track of the state external to
+our component so when the component gets rendered again we can access the latest
+version of the state.
+
+Let's get into it!

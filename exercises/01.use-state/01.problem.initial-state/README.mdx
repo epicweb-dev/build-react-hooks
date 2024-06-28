@@ -1,1 +1,36 @@
 # Initial State
+
+👨‍💼 Hello! So here's where we're starting out:
+
+```tsx
+import { createRoot } from 'react-dom/client'
+
+function Counter() {
+	const [count, setCount] = useState(0)
+	const increment = () => setCount(count + 1)
+
+	return (
+		<div className="counter">
+			<button onClick={increment}>{count}</button>
+		</div>
+	)
+}
+
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+const appRoot = createRoot(rootEl)
+appRoot.render(<Counter />)
+```
+
+Pretty simple, except the `useState` function isn't defined and we're not
+allowed to simply import it from React because we're not allowed to directly use
+any React hooks in this workshop!
+
+And because it's not defined, our `Counter` component won't be able to render
+anything (because an error will be thrown).
+
+So let's just get it to the point where the `Counter` component renders
+initially without errors. When you're done, it should render a button with a `0`
+in it.
+
+The emoji should lead the way!
