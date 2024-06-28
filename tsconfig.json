@@ -1,14 +1,11 @@
 {
-  "files": [],
-  "exclude": [
-    "node_modules"
-  ],
-  "references": [
-    {
-      "path": "exercises/01.example/01.problem.hello"
-    },
-    {
-      "path": "exercises/01.example/01.solution.goodbye"
-    }
-  ]
+	"include": ["**/*.ts", "**/*.tsx"],
+	"extends": ["@epic-web/config/typescript"],
+	"compilerOptions": {
+		// keep things easy for the exercises
+		"noUncheckedIndexedAccess": false,
+		"paths": {
+			"#*": ["./*"]
+		}
+	}
 }

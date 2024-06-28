@@ -1,44 +1,13 @@
-/** @type {import('@types/eslint').Linter.Config} */
-export default {
-	languageOptions: { parser: await import('@typescript-eslint/parser') },
-	plugins: {
-		'@typescript-eslint': (await import('@typescript-eslint/eslint-plugin'))
-			.default,
-		import: (await import('eslint-plugin-import')).default,
+import defaultConfig from '@epic-web/config/eslint'
+
+/** @type {import("eslint").Linter.Config} */
+export default [
+	...defaultConfig,
+	{
+		rules: {
+			// we leave unused vars around for the exercises
+			'no-unused-vars': 'off',
+			'@typescript-eslint/no-unused-vars': 'off',
+		},
 	},
-	ignores: [
-		'node_modules',
-		'build',
-		'public/build',
-		'playwright-report',
-		'test-results',
-	],
-	rules: {
-		// playwright requires destructuring in fixtures even if you don't use anything 🤷‍♂️
-		'no-empty-pattern': 'off',
-		'@typescript-eslint/consistent-type-imports': [
-			'warn',
-			{
-				prefer: 'type-imports',
-				disallowTypeAnnotations: true,
-				fixStyle: 'inline-type-imports',
-			},
-		],
-		'import/no-duplicates': ['warn', { 'prefer-inline': true }],
-		'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
-		'import/order': [
-			'warn',
-			{
-				alphabetize: { order: 'asc', caseInsensitive: true },
-				groups: [
-					'builtin',
-					'external',
-					'internal',
-					'parent',
-					'sibling',
-					'index',
-				],
-			},
-		],
-	},
-}
+]

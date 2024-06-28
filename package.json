@@ -6,9 +6,9 @@
     "subtitle": "Understand how React hooks work by building them from scratch",
     "githubRoot": "https://github.com/epicweb-dev/build-react-hooks/blob/main",
     "instructor": {
-      "name": "Some instructor",
+      "name": "Kent C. Dodds",
       "avatar": "/images/instructor.png",
-      "𝕏": "your_x_handle_here"
+      "𝕏": "kentcdodds"
     }
   },
   "type": "module",
@@ -39,59 +39,23 @@
     "npm": ">=8.16.0",
     "git": ">=2.18.0"
   },
+  "dependencies": {
+    "react": "19.0.0-beta-94eed63c49-20240425",
+    "react-dom": "19.0.0-beta-94eed63c49-20240425"
+  },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.14.1",
+    "@epic-web/config": "^1.11.2",
+    "@types/react": "npm:types-react@19.0.0-alpha.5",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-alpha.5",
     "eslint": "^9.5.0",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react-hooks": "5.1.0-beta-94eed63c49-20240425",
     "prettier": "^3.3.2",
     "typescript": "^5.5.2"
   },
-  "prettier": {
-    "arrowParens": "avoid",
-    "bracketSameLine": false,
-    "bracketSpacing": true,
-    "embeddedLanguageFormatting": "auto",
-    "endOfLine": "lf",
-    "htmlWhitespaceSensitivity": "css",
-    "insertPragma": false,
-    "jsxSingleQuote": false,
-    "printWidth": 80,
-    "proseWrap": "always",
-    "quoteProps": "as-needed",
-    "requirePragma": false,
-    "semi": false,
-    "singleAttributePerLine": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all",
-    "useTabs": true,
-    "overrides": [
-      {
-        "files": [
-          "**/*.json"
-        ],
-        "options": {
-          "useTabs": false
-        }
-      },
-      {
-        "files": [
-          "**/*.mdx"
-        ],
-        "options": {
-          "proseWrap": "preserve",
-          "htmlWhitespaceSensitivity": "ignore"
-        }
-      }
-    ]
+  "overrides": {
+    "@types/react": "$@types/react",
+    "@types/react-dom": "$@types/react-dom",
+    "eslint-plugin-react-hooks": "$eslint-plugin-react-hooks"
   },
-  "prettierIgnore": [
-    "node_modules",
-    "**/build/**",
-    "**/public/build/**",
-    ".env",
-    "**/package-lock.json",
-    "**/playwright-report/**"
-  ]
+  "prettier": "@epic-web/config/prettier"
 }
