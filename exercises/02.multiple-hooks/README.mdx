@@ -1,10 +1,36 @@
 # Multiple Hooks
 
+Often components require more than a single hook. In fact, often they'll use
+two or more of the `useState` hook. If we tried that with our implementation
+right now things wouldn't work so well and I think you can imagine why.
+
+The tricky part about this is when you have more than one hook, you need to be
+able to track their values over the lifetime of the component relative to each
+other and that component. What makes this difficult though is that there's no
+uniquely identifying information about the hooks:
+
+```tsx
+const [count1, setCount1] = useState(0)
+const [count2, setCount2] = useState(0)
+```
+
+Having two elements of state like this in a component is perfectly legitimate,
+but our current implementation wouldn't work for that at all because the state
+would be shared between the two hooks.
+
+So how do we get around that?
+
+Well, it's not entirely true to say that there's no uniquely identifying
+information about the hooks.... There actually is something unique about these
+function calls and that is the order in which they are called!
+
+If we can assume that they'll always be called in the same order, then we can
+assign the first one an ID of `0` and the second one an ID of `1`. Then we can
+use that ID to track the state of the hooks!
+
 Something you will hopefully gather from this exercise is an understanding of
 why the ["rules of hooks"](https://react.dev/reference/rules/rules-of-hooks) is
-a thing. The rules are:
+a thing. Specifically the rule that hooks must be called at the top level (and
+not conditionally).
 
-- Only call Hooks at the top level
-- Only call Hooks from React functions
-
-As we work to implement th
+So, let's get into it!

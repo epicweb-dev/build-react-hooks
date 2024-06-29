@@ -1,1 +1,25 @@
 # Callback
+
+🧝‍♂️ I've added a `useEffect`, but it's not supported yet so the app's busted:
+
+```tsx
+useEffect(() => {
+	console.log('consider yourself effective!')
+})
+```
+
+You can <PrevDiffLink>check my work</PrevDiffLink> if you'd like. Can you fix
+it? Thanks!
+
+👨‍💼 Sure thing Kellie, thanks!
+
+Ok, so what we need to do here is going to feel a little familiar. We'll want to
+create an `effects` array that stores all the callbacks. Then our `useEffect`
+hook implementation will actually be pretty darn simple: get the `ID` for our
+hook, add the callback to the `effects` array. We don't even have to return
+anything.
+
+The tricky bit will be to make the `appRoot.render` call synchronous with
+`flushSync` so we can iterate through all the effects to call the callback.
+
+I think you can do it. Let's go!

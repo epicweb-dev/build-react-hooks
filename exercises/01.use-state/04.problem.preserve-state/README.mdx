@@ -1,1 +1,26 @@
 # Preserve State
+
+👨‍💼 Alright, so there are actually two problems here. First, when the user clicks
+on the button, we update the `state` variable inside the `useState` closure, but
+that variable is not accessible by our component. Our component has its own
+variable called `count` which is not being updated
+
+<callout-info>
+	Just because two variables point to the same object in memory (or in our case,
+	the same number) doesn't mean they stay in sync when one is reassigned. That's
+	just how JavaScript works.
+</callout-info>
+
+The second problem we have is when our component is called, it calls `useState`
+and that creates a brand new `state` variable that's assigned to the
+`initialState` variable again.
+
+So we need a way to preserve the state between renders. We can do that by
+pulling the `state` and `setState` variables outside the `useState` hook and
+simply assigning them on the initial render of the component.
+
+Give that a try!
+
+<callout-success>
+	The button will finally work on this one, I promise!
+</callout-success>

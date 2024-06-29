@@ -1,1 +1,18 @@
 # Hook ID
+
+👨‍💼 Based on what's happening now, I think we're not isolating the `state`
+between the two hooks. We need to uniquely identify each hook and store their
+state separately.
+
+We know that the hooks are called in the same order every time, so we could keep
+a call index (we'll call it the `hookIndex`) and increment it every time
+`useState` is called. That way, we could assign the first hook an ID of `0` and
+the second hook an ID of `1`.
+
+Then we store the `state` and `setState` in an array with their ID as the
+key.
+
+Then, whenever we render we just reset the `hookIndex` to `0` and we'll be
+golden!
+
+<callout-success>It'll work this time, I promise!</callout-success>

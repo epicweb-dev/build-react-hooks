@@ -1,1 +1,30 @@
 # Re-render
+
+👨‍💼 Ok, so we're initializing our state properly and we're updating the state
+properly as well. The problem is we're not updating the UI when the state gets
+updated. Remember, we're not React. We need to tell React when the state has
+changed so it will render our component again.
+
+Because we're not React, the way we will do this is by simply calling `render`
+our our root again. Remember what the bottom of our file looks like?
+
+```tsx lines=4
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+const appRoot = createRoot(rootEl)
+appRoot.render(<Counter />)
+```
+
+That last line there is where we render the component. So we just need to call
+that any time we want the component updated!
+
+So in this exercise, wrap that bit in a function and call it once for the
+initial render and once in the `setState` function.
+
+Feel free to toss in a `console.log` in the component to make sure it's
+re-rendering.
+
+<callout-warning>
+	When you're finished with this, the UI will **still** not work like you
+	expect. I promise we'll get to that very soon!
+</callout-warning>

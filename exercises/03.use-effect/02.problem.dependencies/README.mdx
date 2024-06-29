@@ -1,1 +1,24 @@
 # Dependencies
+
+🧝‍♂️ I've updated the `useEffect`:
+
+```tsx
+useEffect(() => {
+	if (enabled) {
+		console.log('consider yourself effective!')
+	} else {
+		console.log('consider yourself ineffective!')
+	}
+}, [enabled])
+```
+
+You can <PrevDiffLink>check my work</PrevDiffLink> if you'd like. The app's not
+technically broken, but the logs should only happen when toggling enabled and
+right now we're getting logs when clicking the counter as well.
+
+👨‍💼 We can handle this! So you'll need to also keep track of the deps array and
+even the previous value of the deps array. Then just add a little logic to
+determine whether to call the effect callback based on whether any of the
+dependencies changed.
+
+You can do this. Let's go!

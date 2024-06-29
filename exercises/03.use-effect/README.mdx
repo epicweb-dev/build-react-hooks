@@ -1,1 +1,23 @@
 # useEffect
+
+The `useEffect` hook has a simple API:
+
+```tsx
+useEffect(callback, [dep1, dep2])
+```
+
+The dependencies are optional, the callback can return a cleanup function. On
+re-renders that change the dependencies, the callback will be called again (
+after first calling the previous cleanup if one was given). If no dependency
+array is provided, the callback will be called on every render. That's about it.
+
+We can follow the same pattern with storing the callback and dependencies as we
+did with `useState` before. And we can call the callbacks in the `render`
+function we have. Should be pretty simple!
+
+However, because we're not React, we don't actually know when the component has
+finished rendering. So we're going to use React's
+[`flushSync`](https://react.dev/reference/react-dom/flushSync) API to force the
+render to happen synchronously so that we can get the callbacks to run.
+
+So let's get into it!

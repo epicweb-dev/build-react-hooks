@@ -1,1 +1,31 @@
 # Render Phase
+
+🧝‍♂️ Hi! I made a change to the code a bit. Now we're rendering two buttons, the
+count button is still there, but now we're also a button for disabling the count
+button. I needed to add another `useState` for that, but it's not working. You
+can <PrevDiffLink>check my work</PrevDiffLink> if you'd like. Can you get it
+working? Thanks!
+
+👨‍💼 Thanks for adding those buttons Kellie!
+
+Ok, so what we need you to do is fix the problem. If you add a
+`console.log({ count, enabled })` to the component, you'll get
+`{ count: 0, enabled: 0 }`. This is because the first time the `useState` is
+called initializes the state and the second time it's called, it just references
+the first one.
+
+So to start off fixing this issue, you're going to need to formalize how we
+determine whether state gets initialized or referenced.
+
+Really, `useState` can be called in two scenarios:
+
+- Initialization
+- Updates
+
+So we're going to keep track of how this is called with a `phase` variable. The
+emoji will guide you in the right direction. Good luck!
+
+<callout-warning>
+	Note it's not going to quite work when you're finished with this step, but
+	it'll work soon!
+</callout-warning>
