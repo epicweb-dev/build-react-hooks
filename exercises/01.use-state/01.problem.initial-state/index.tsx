@@ -1,3 +1,6 @@
+// 💣 delete this
+import { useState } from 'react'
+
 import { createRoot } from 'react-dom/client'
 
 // 🐨 create a `useState` function which accepts the initial state and returns
@@ -6,7 +9,6 @@ import { createRoot } from 'react-dom/client'
 // Feel free to make the `useState` a generic though!
 
 function Counter() {
-	// @ts-expect-error 💣 delete this comment
 	const [count, setCount] = useState(0)
 	// 🦺 you'll get an error for this we'll fix that next
 	const increment = () => setCount(count + 1)
