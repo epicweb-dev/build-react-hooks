@@ -1,3 +1,6 @@
+// 💣 delete this so we can implement our own
+import { useEffect } from 'react'
+
 // 💰 you'll need this
 // import { flushSync } from 'react-dom'
 import { createRoot } from 'react-dom/client'
@@ -35,7 +38,6 @@ function Counter() {
 	const [enabled, setEnabled] = useState(true)
 	const toggle = () => setEnabled(!enabled)
 
-	// @ts-expect-error 💣 delete this comment
 	useEffect(() => {
 		console.log('consider yourself effective!')
 	})
