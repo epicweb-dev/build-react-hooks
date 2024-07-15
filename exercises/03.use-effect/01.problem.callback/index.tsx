@@ -68,7 +68,7 @@ function render(newPhase: Phase) {
 	appRoot.render(<Counter />)
 
 	// 🐨 add a for of loop for all the effects and call their callbacks, 
-	// making sure to skip handling of undefined effects
+	// making sure to skip over any undefined effects
 }
 
 render(INITIALIZATION)
