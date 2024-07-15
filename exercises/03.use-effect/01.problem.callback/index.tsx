@@ -13,6 +13,7 @@ let hookIndex = 0
 const states: Array<[any, (newState: any) => void]> = []
 type EffectCallback = () => void
 // 🐨 make a variable called "effects" that's an array of objects with a callback property
+// of the "EffectCallback" type we've defined on line 14 above
 
 function useState<State>(initialState: State) {
 	const id = hookIndex++
@@ -28,8 +29,8 @@ function useState<State>(initialState: State) {
 	return states[id] as [State, (newState: State) => void]
 }
 
-// 🐨 create a useEffect function here that accepts a callback,
-// gets the id from hookIndex++, and adds it to effects
+// 🐨 create a useEffect function here that accepts an "EffectCallback" callback,
+// and adds the callback to the effects array at the index "hookIndex++"
 
 function Counter() {
 	const [count, setCount] = useState(0)
@@ -66,7 +67,8 @@ function render(newPhase: Phase) {
 	// 🐨 wrap this in flushSync
 	appRoot.render(<Counter />)
 
-	// 🐨 add a for of loop for all the effects and call their callbacks.
+	// 🐨 add a for of loop for all the effects and call their callbacks, 
+	// making sure to skip handling of undefined effects
 }
 
 render(INITIALIZATION)
