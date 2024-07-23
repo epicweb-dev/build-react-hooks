@@ -13,7 +13,7 @@ let hookIndex = 0
 const states: Array<[any, (newState: any) => void]> = []
 type EffectCallback = () => void
 // 🐨 make a variable called "effects" that's an array of objects with a callback property
-// of the "EffectCallback" type we've defined on line 14 above
+// of the "EffectCallback" type we've defined above
 
 function useState<State>(initialState: State) {
 	const id = hookIndex++
