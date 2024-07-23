@@ -67,7 +67,7 @@ function render(newPhase: Phase) {
 	// 🐨 wrap this in flushSync
 	appRoot.render(<Counter />)
 
-	// 🐨 add a for of loop for all the effects and call their callbacks, 
+	// 🐨 add a for of loop for all the effects and call their callbacks,
 	// making sure to skip over any undefined effects
 }
 
