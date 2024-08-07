@@ -43,7 +43,7 @@
 Here are some resources you can read before taking the workshop to get you up to
 speed on some of the tools and concepts we'll be covering:
 
-- TODO: add resources
+- [Getting Closure on React Hooks](https://www.swyx.io/hooks)
 
 ## System Requirements
 
