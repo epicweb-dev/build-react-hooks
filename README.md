@@ -32,11 +32,7 @@
 
 ## Prerequisites
 
-- TODO: add prerequisites
-- Some
-- Pre-requisite
-- links
-- here
+- [Experience with React hooks](https://www.epicreact.dev/hooks)
 
 ## Pre-workshop Resources
 
