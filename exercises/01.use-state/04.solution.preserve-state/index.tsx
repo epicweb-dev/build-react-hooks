@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 
 let state: any, setState: any
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	if (state === undefined) {
 		state = initialState
 		setState = (newState: State) => {

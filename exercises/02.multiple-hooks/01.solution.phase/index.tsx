@@ -7,7 +7,7 @@ let phase: Phase
 
 let state: any, setState: any
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	if (phase === INITIALIZATION) {
 		state = initialState
 		setState = (newState: State) => {

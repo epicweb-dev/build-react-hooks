@@ -14,7 +14,7 @@ const effects: Array<{
 	prevDeps?: Array<any>
 }> = []
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	const id = hookIndex++
 	if (phase === INITIALIZATION) {
 		states[id] = [
@@ -28,7 +28,7 @@ function useState<State>(initialState: State) {
 	return states[id] as [State, (newState: State) => void]
 }
 
-function useEffect(callback: EffectCallback, deps?: Array<any>) {
+export function useEffect(callback: EffectCallback, deps?: Array<any>) {
 	const id = hookIndex++
 	effects[id] = { callback, deps, prevDeps: effects[id]?.deps }
 }

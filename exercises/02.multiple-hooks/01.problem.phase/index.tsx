@@ -9,7 +9,7 @@ import { createRoot } from 'react-dom/client'
 
 let state: any, setState: any
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	// 🐨 change this to check whether the phase is INITIALIZATION
 	if (state === undefined) {
 		state = initialState

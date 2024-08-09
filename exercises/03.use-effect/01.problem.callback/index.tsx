@@ -15,7 +15,7 @@ type EffectCallback = () => void
 // 🐨 make a variable called "effects" that's an array of objects with a callback property
 // of the "EffectCallback" type we've defined above
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	const id = hookIndex++
 	if (phase === INITIALIZATION) {
 		states[id] = [

@@ -11,7 +11,7 @@ let phase: Phase
 // 💣 delete these variable declarations
 let state: any, setState: any
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	// 🐨 create a variable called "id" and assign it to "hookIndex++"
 	if (phase === INITIALIZATION) {
 		// 🐨 assign states[id] to an array with the initialState and the setState function

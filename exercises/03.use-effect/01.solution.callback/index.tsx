@@ -12,7 +12,7 @@ const effects: Array<{
 	callback: EffectCallback
 }> = []
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	const id = hookIndex++
 	if (phase === INITIALIZATION) {
 		states[id] = [
@@ -26,7 +26,7 @@ function useState<State>(initialState: State) {
 	return states[id] as [State, (newState: State) => void]
 }
 
-function useEffect(callback: EffectCallback) {
+export function useEffect(callback: EffectCallback) {
 	const id = hookIndex++
 	effects[id] = { callback }
 }

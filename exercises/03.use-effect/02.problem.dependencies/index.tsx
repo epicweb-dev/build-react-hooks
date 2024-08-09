@@ -13,7 +13,7 @@ const effects: Array<{
 	// 🦺 add an optional deps and prevDeps properties which can be arrays of anything
 }> = []
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	const id = hookIndex++
 	if (phase === INITIALIZATION) {
 		states[id] = [
@@ -28,7 +28,7 @@ function useState<State>(initialState: State) {
 }
 
 // 🐨 add an optional deps argument here
-function useEffect(callback: EffectCallback) {
+export function useEffect(callback: EffectCallback) {
 	const id = hookIndex++
 	// 🐨 add deps and prevDeps to this object - prevDeps should be "effects[id]?.deps"
 	effects[id] = { callback }
@@ -76,7 +76,7 @@ function render(newPhase: Phase) {
 
 		// 🐨 Create a "hasDepsChanged" variable to determine whether the effect should be called.
 		// If the effect has no deps, "hasDepsChanged" should be true.
-		// If the effect does have deps, "hasDepsChanged" should calculate whether any item 
+		// If the effect does have deps, "hasDepsChanged" should calculate whether any item
 		// in the "deps" array is different from the corresponding item in the "prevDeps" array,
 		// and return true if so, false otherwise.
 

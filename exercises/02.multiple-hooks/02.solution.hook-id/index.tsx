@@ -7,7 +7,7 @@ let phase: Phase
 let hookIndex = 0
 const states: Array<[any, (newState: any) => void]> = []
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	const id = hookIndex++
 	if (phase === INITIALIZATION) {
 		states[id] = [

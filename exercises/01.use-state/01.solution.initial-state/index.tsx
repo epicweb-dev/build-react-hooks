@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 
-function useState<State>(initialState: State) {
+export function useState<State>(initialState: State) {
 	const state = initialState
 	const setState = () => {}
 	return [state, setState] as const

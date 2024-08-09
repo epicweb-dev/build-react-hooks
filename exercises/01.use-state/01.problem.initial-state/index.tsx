@@ -7,6 +7,7 @@ import { createRoot } from 'react-dom/client'
 // an array of the state and a no-op function: () => {}
 // 🦺 note you may need to ignore some typescript errors here. We'll fix them later.
 // Feel free to make the `useState` a generic though!
+// ⚠️ don't forget to `export` your `useState` function so the tests can find it
 
 function Counter() {
 	const [count, setCount] = useState(0)
