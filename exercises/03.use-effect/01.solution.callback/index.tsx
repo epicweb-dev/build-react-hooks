@@ -39,7 +39,7 @@ function Counter() {
 	const toggle = () => setEnabled(!enabled)
 
 	useEffect(() => {
-		console.log('consider yourself effective!')
+		console.info('consider yourself effective!')
 	})
 
 	return (

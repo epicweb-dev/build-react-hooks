@@ -31,6 +31,7 @@ export function useState<State>(initialState: State) {
 
 // 🐨 create a useEffect function here that accepts an "EffectCallback" callback,
 // and adds the callback to the effects array at the index "hookIndex++"
+// 🚨 make sure to export this function so I can test it
 
 function Counter() {
 	const [count, setCount] = useState(0)
@@ -40,7 +41,7 @@ function Counter() {
 	const toggle = () => setEnabled(!enabled)
 
 	useEffect(() => {
-		console.log('consider yourself effective!')
+		console.info('consider yourself effective!')
 	})
 
 	return (

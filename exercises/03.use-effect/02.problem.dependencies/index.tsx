@@ -43,9 +43,9 @@ function Counter() {
 
 	useEffect(() => {
 		if (enabled) {
-			console.log('consider yourself effective!')
+			console.info('consider yourself effective!')
 		} else {
-			console.log('consider yourself ineffective!')
+			console.info('consider yourself ineffective!')
 		}
 		// @ts-expect-error 💣 delete this comment
 	}, [enabled])
