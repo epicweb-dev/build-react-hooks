@@ -32,8 +32,3 @@ await testStep(
 		expect(setState).to.be.a('function')
 	},
 )
-
-await testStep(
-	'There are no still testable changes in this exercise step from the previous one. Keep going!',
-	() => {},
-)
