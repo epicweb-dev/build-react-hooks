@@ -4,11 +4,7 @@ import {
 	isProblemApp,
 	setPlayground,
 } from '@epic-web/workshop-utils/apps.server'
-import { getWatcher } from '@epic-web/workshop-utils/change-tracker.server'
 import fsExtra from 'fs-extra'
-
-// getApps expects this env var
-process.env.NODE_ENV = 'development'
 
 const allApps = await getApps()
 const problemApps = allApps.filter(isProblemApp)
@@ -26,12 +22,10 @@ if (!process.env.SKIP_PLAYGROUND) {
 			() => {
 				console.log('✅ first problem app set up')
 			},
-			error => {
+			(error) => {
 				console.error(error)
 				throw new Error('❌  first problem app setup failed')
 			},
 		)
 	}
 }
-
-getWatcher().close()
