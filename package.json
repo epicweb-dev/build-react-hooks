@@ -5,8 +5,13 @@
     "title": "Build React Hooks 🪝",
     "subtitle": "Understand how React hooks work by building them from scratch",
     "githubRoot": "https://github.com/epicweb-dev/build-react-hooks/blob/main",
-    "epicWorkshopSlug": "build-react-hooks",
-    "epicWorkshopHost": "www.epicreact.dev",
+    "product": {
+      "host": "www.epicreact.dev",
+      "slug": "build-react-hooks",
+      "displayName": "EpicReact.dev",
+      "displayNameShort": "Epic React",
+      "logo": "/logo.svg"
+    },
     "instructor": {
       "name": "Kent C. Dodds",
       "avatar": "/images/instructor.png",
