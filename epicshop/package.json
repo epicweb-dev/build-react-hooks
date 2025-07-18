@@ -3,9 +3,9 @@
   "dependencies": {
     "@epic-web/workshop-app": "^6.15.0",
     "@epic-web/workshop-utils": "^6.15.0",
-    "chokidar": "^3.6.0",
-    "execa": "^9.3.0",
-    "fs-extra": "^11.2.0",
+    "chokidar": "^4.0.3",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.0",
     "@epic-web/workshop-cli": "^6.15.0"
   }
 }
