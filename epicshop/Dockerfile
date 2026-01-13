@@ -1,4 +1,4 @@
-FROM node:24-bookworm-slim as base
+FROM oven/bun:1-debian as base
 
 RUN apt-get update && apt-get install -y git
 
@@ -18,10 +18,10 @@ RUN git clone --depth 1 ${EPICSHOP_GITHUB_REPO} ${EPICSHOP_CONTEXT_CWD}
 
 ADD . .
 
-RUN npm install --omit=dev
+RUN bun install --production
 
 RUN cd ${EPICSHOP_CONTEXT_CWD} && \
-    npx epicshop warm
+    bunx epicshop warm
 
 CMD cd ${EPICSHOP_CONTEXT_CWD} && \
-    npx epicshop start
+    bunx epicshop start
