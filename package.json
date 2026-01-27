@@ -47,7 +47,7 @@
     "git": ">=2.18.0"
   },
   "dependencies": {
-    "@epic-web/workshop-utils": "^6.77.1",
+    "@epic-web/workshop-utils": "^6.77.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/user-event": "^14.6.1",
     "react": "19.1.0",
